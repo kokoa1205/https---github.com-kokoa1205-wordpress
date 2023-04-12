@@ -5,6 +5,7 @@ require 'holiday_function.php';
 if (isset($_POST['submit'])) {
     updateHolidayWeek($_POST['closedWeek']);
     updateHolidayDays($_POST['closedDays']);
+    updateHoliday($_POST['days'], $_POST['closedWeek'], $_POST['closedDays']);
 }
 
 

@@ -37,7 +37,6 @@ function getHolidays()
     $sql .= " WHERE";
     $sql .= " year = ".date('Y');
     $sql .= " and month = ".date('n');
-    $sql .= " and isDeleted = 0";
     return $wpdb->get_results($sql, ARRAY_A);
 }
 
@@ -94,7 +93,55 @@ function updateHolidayDays($closedDay)
 
 }
 
+// 定休日の更新
+function updateHoliday($days, $closedWeek, $closedDay)
+{
+    global $wpdb;
+    $wpdb->query("DELETE FROM {$wpdb->prefix}holiday where year = ".date('Y')." and month = ".date('n'));
 
+
+    $updateDays = addUpdateDayArray($days, $closedWeek, $closedDay);
+
+    // 定休日に設定する
+    $sql = "";
+    $sql .= " INSERT";
+    $sql .= " INTO";
+    $sql .= " {$wpdb->prefix}holiday";
+    $sql .= " (year, month, day)";
+    $sql .= " VALUES";
+    for ($i = 0;$i < count($updateDays); $i++) {
+        $sql .= "  (";
+        $sql .= " ".date('Y')." , ";
+        $sql .= " ".date('n')." , ";
+        $sql .= $updateDays[$i];
+        $sql .= ")";
+        if ($i != count($updateDays)-1) {
+            $sql .= ", ";
+        }
+    }
+    echo $sql;
+    $results = $wpdb->query($sql);
+}
+
+
+function addUpdateDayArray($days, $closedWeek, $closedDay)
+{
+    $timestamp = strtotime($ym . '-01');
+    if ($timestamp === false) {
+        $ym = date('Y-m');
+        $timestamp = strtotime($ym . '-01');
+    }
+    $day_count = date('t', $timestamp);
+    $youbi = date('w', mktime(0, 0, 0, date('m', $timestamp), 1, date('Y', $timestamp)));
+    $day_count = date('t', $timestamp);
+
+    for ($day = 1; $day <= $day_count; $day++, $youbi++) {
+        if ((isHoliday(floor($youbi/7)+1, $closedWeek) && isHolidayDays($youbi, $closedDay))) {
+            array_push($days, $day);
+        }
+    }
+    return array_unique($days);
+}
 
 
 
@@ -111,18 +158,14 @@ function isHoliday($num, $holidayArray)
 
 function isHolidayDays($num, $holidayArray)
 {
-
     if (!($num < 6)) {
         $num = $num % 7;
     }
-
     for ($i = 0; $i < count($holidayArray);$i++) {
         if ($holidayArray[$i] == $num+1) {
             return true;
         }
     }
-
-
 }
 
 
@@ -160,7 +203,8 @@ function printCalendar($holidays, $ym, $holidayWeeks, $holidayDays)
                 $week .= '<td class="today text-center"><input type="checkbox" class="btn-check" id="days'.$day.'" autocomplete="off" value="'.$day.'" name="days[]"><label class="btn btn-outline-success" for="days'.$day.'">'.$day.'</label>';
             }
         } else {
-            if (isHoliday($day, $holidays) || (isHoliday(floor($youbi/7)+1, $holidayWeeks) && isHolidayDays($youbi, $holidayDays))) {
+            // if (isHoliday($day, $holidays) || (isHoliday(floor($youbi/7)+1, $holidayWeeks) && isHolidayDays($youbi, $holidayDays))) {
+            if (isHoliday($day, $holidays)) {
                 $week .= '<td class="text-center"><input type="checkbox" class="btn-check" id="days'.$day.'" autocomplete="off" value="'.$day.'" name="days[]" checked><label class="btn btn-outline-success" for="days'.$day.'">'.$day.'</label>';
             } else {
                 $week .= '<td class="text-center"><input type="checkbox" class="btn-check" id="days'.$day.'" autocomplete="off" value="'.$day.'" name="days[]"><label class="btn btn-outline-success" for="days'.$day.'">'.$day.'</label>';
