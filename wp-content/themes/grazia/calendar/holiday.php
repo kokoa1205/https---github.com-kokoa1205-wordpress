@@ -3,11 +3,16 @@ require 'holiday_function.php';
 
 
 if (isset($_POST['submit'])) {
+    updateBusinessHours($_POST['openHours'], $_POST['closeHours']);
     updateHolidayWeek($_POST['closedWeek']);
     updateHolidayDays($_POST['closedDays']);
     updateHoliday($_POST['days'], $_POST['closedWeek'], $_POST['closedDays']);
 }
 
+// 営業時間の取得
+$businessHours = getBisinessHours();
+$businessHoursStart = array_column($businessHours, 'start')[0];
+$businessHoursEnd = array_column($businessHours, 'end')[0];
 
 // 定休日の週を取得
 $holidayWeeks = getHolidayWeek();
@@ -61,12 +66,21 @@ $next = date('Y-m', mktime(0, 0, 0, date('m', $timestamp)+1, 1, date('Y', $times
   button,
   th,
   tr,
-  td {
+  td,
+  select,
+  option,
+  span {
     font-size: 8px !important;
   }
 
   .yearMonthTitle {
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 781px) {
+  select {
+    min-height: 0 !important;
   }
 }
 
@@ -106,6 +120,34 @@ td:nth-of-type(7) {
   <h2>定休日入力画面</h2>
   <form method="post">
     <div class="col p-3 mb-2 alert-primary text-dark rounded">
+      <div class="row">
+        <div class="col-8">
+          <label class="col col-form-label fw-bold" for="inputGroupSelect01">営業時間を選択してください
+          </label>
+          <div class="input-group mb-3">
+            <span class="input-group-text">営業開始時間</span>
+            <select class="form-select form-select-sm" id="openHours" name="openHours">
+              <?php for ($i = 1;$i <=12; $i++): ?>
+              <?php if ($businessHoursStart == $i): ?>
+              <option value="<?php echo $i ?>" selected><?php echo $i ?></option>
+              <?php endif; ?>
+              <option value="<?php echo $i ?>"><?php echo $i ?></option>
+              <?php endfor; ?>
+            </select>
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">営業終了時間</span>
+            <select class="form-select form-select-sm" id=" closeHours" name="closeHours">
+              <?php for ($i = 1;$i <=12; $i++): ?>
+              <?php if ($businessHoursEnd == $i): ?>
+              <option value="<?php echo $i ?>" selected><?php echo $i ?></option>
+              <?php endif; ?>
+              <option value="<?php echo $i ?>"><?php echo $i ?></option>
+              <?php endfor; ?>
+            </select>
+          </div>
+        </div>
+      </div>
       <div class="row">
         <label class="col col-form-label fw-bold" for="inputGroupSelect01">第何週を定休日にするかを選択してください</label>
         <div class="input-group mb-3">

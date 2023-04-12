@@ -1,6 +1,18 @@
 <?php
 
 // 定休日の週を取得
+function getBisinessHours()
+{
+    global $wpdb;
+    $sql = "";
+    $sql .= " SELECT";
+    $sql .= " *";
+    $sql .= " FROM";
+    $sql .= " {$wpdb->prefix}shop_business_hours";
+    return $wpdb->get_results($sql, ARRAY_A);
+}
+
+// 定休日の週を取得
 function getHolidayWeek()
 {
     global $wpdb;
@@ -10,7 +22,6 @@ function getHolidayWeek()
     $sql .= " FROM";
     $sql .= " {$wpdb->prefix}holiday_week";
     return $wpdb->get_results($sql, ARRAY_A);
-
 }
 
 // 定休日の曜日を取得
@@ -38,6 +49,23 @@ function getHolidays()
     $sql .= " year = ".date('Y');
     $sql .= " and month = ".date('n');
     return $wpdb->get_results($sql, ARRAY_A);
+}
+
+function updateBusinessHours($openHours, $closeHours)
+{
+    global $wpdb;
+    $wpdb->query("DELETE FROM {$wpdb->prefix}shop_business_hours");
+
+    // 営業時間を挿入する
+    $sql = "";
+    $sql .= " INSERT";
+    $sql .= " INTO";
+    $sql .= " {$wpdb->prefix}shop_business_hours";
+    $sql .= " (start, end)";
+    $sql .= " VALUES";
+    $sql .= " (".$openHours.", ".$closeHours.") ";
+
+    $results = $wpdb->query($sql);
 }
 
 // 定休日の週を更新
@@ -119,11 +147,10 @@ function updateHoliday($days, $closedWeek, $closedDay)
             $sql .= ", ";
         }
     }
-    echo $sql;
     $results = $wpdb->query($sql);
 }
 
-
+// 定休日の週と曜日からの定休日を配列に追加
 function addUpdateDayArray($days, $closedWeek, $closedDay)
 {
     $timestamp = strtotime($ym . '-01');

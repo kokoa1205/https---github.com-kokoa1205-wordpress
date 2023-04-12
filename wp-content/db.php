@@ -17,7 +17,8 @@ class my_wpdb extends wpdb
         'commentmeta',
         'holiday',
         'holiday_week',
-        'holiday_day'
+        'holiday_day',
+        'shop_business_hours'
     );
 }
 
