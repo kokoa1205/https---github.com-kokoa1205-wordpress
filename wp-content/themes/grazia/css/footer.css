@@ -1,0 +1,220 @@
+/*==================================================
+footer
+===================================*/
+footer {
+  width: 100%;
+  height: 100%;
+  background-repeat: repeat;
+  text-align: center;
+  border-top: 6px double #bab8b8;
+}
+
+.info-content,
+.open-time-content,
+.reserve-content {
+  margin: 50px 0 0 0 !important;
+}
+
+footer .title {
+  text-align: start;
+  font-size: 24px;
+  width: 50%;
+  /* margin-left: 25%; */
+  margin: 0 auto;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.08em;
+}
+
+footer .contents {
+  font-size: 14px;
+  width: 50%;
+  margin: 0 auto;
+  text-align: start;
+
+}
+
+footer .contents .bold {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.footer-reserve {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 20px;
+  background: rgb(250, 250, 250);
+  border: 1px solid;
+  outline: none;
+  /*アニメーションの指定*/
+  transition: all .3s;
+  transition-delay: .7s;
+  /*0.7秒遅れてアニメーション*/
+  margin-bottom: 30px;
+}
+
+/*hoverした際の、ボタンの背景とテキスト色の変更*/
+.footer-reserve:hover {
+  background: rgb(255, 254, 254);
+  color: #333;
+}
+
+/*線の設定*/
+.footer-reserve span {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  color: rgb(43, 43, 43) !important;
+}
+
+/*横線の設定*/
+.footer-reserve::before,
+.footer-reserve::after {
+  content: "";
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  /*線の形状*/
+  width: 0;
+  height: 2px;
+  background: #333;
+  /*アニメーションの指定*/
+  transition: all 0.2s linear;
+}
+
+/*縦線の設定*/
+.footer-reserve span::before,
+.footer-reserve span::after {
+  content: "";
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  /*線の形状*/
+  width: 2px;
+  height: 0;
+  background: #333;
+  /*アニメーションの指定*/
+  transition: all 0.2s linear;
+}
+
+/*hoverした際、線が縦横100%伸びる*/
+.footer-reserve:hover::before,
+.footer-reserve:hover::after {
+  width: 100%;
+}
+
+.footer-reserve:hover span::before,
+.footer-reserve:hover span::after {
+  height: 100%;
+}
+
+/*== 左下⇒右下⇒右上⇒左上⇒左下に枠線が伸びて塗りに */
+
+/*左下から右下へ伸びる横線*/
+.bordercircle::after {
+  left: 0;
+  bottom: 0;
+}
+
+/*右下から上へ伸びる縦線*/
+.bordercircle span::after {
+  right: 0;
+  bottom: 0;
+  transition-delay: 0.2s;
+}
+
+/*右上から左上へ伸びる横線*/
+.bordercircle::before {
+  right: 0;
+  top: 0;
+  transition-delay: 0.4s;
+}
+
+/*左上から左下へ伸びる横線*/
+.bordercircle span::before {
+  left: 0;
+  top: 0;
+  transition-delay: 0.6s;
+}
+
+.footer-sns {
+  width: fit-content;
+  margin: 20px auto 0 !important;
+}
+
+.footer-sns .title-img {
+  text-align: center;
+}
+
+.footer-sns .insta-icon {
+  width: fit-content;
+  margin: 0;
+  margin-right: 8px;
+}
+
+.footer-bottom {
+  background: #474747;
+}
+
+.footer-bottom .navbar {
+  margin-top: 18px;
+}
+
+.footer-bottom .navbar ul li a {
+  border-bottom: none;
+  font-size: 14px;
+  color: rgb(235, 235, 235) !important;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 2rem !important;
+  font-size: 0.8rem;
+}
+
+.copyright span {
+  color: rgb(159 159 159) !important;
+}
+
+
+
+@media screen and (max-width: 959px) {
+
+  /*==================================================
+    フッター （レスポンシブデザイン）
+    ===================================*/
+  footer {
+    border-top: 6px double #000;
+  }
+
+  footer .row .info-content,
+  footer .row .open-time-content,
+  footer .row .reserve-content {
+    width: 100% !important;
+  }
+
+  footer .row .info-content .contents,
+  footer .row .open-time-content .contents,
+  footer .row .reserve-content .contents {
+    width: 70%;
+  }
+
+  footer .row .info-content .title,
+  footer .row .open-time-content .title,
+  footer .row .reserve-content .title {
+    width: 70%;
+    text-align: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  .footer-sns {
+    width: 100% !important;
+  }
+
+  .footer-sns>div:first-child {
+    margin-left: 20px;
+  }
+}
