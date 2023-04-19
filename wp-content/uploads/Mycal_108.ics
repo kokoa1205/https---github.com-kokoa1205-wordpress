@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:Spatie calendar-links
+BEGIN:VEVENT
+UID:04bc98bcd0ed657677d759cb3c3a5155
+SUMMARY:Grazia - 2023-04-27 09:15
+DTSTAMP;TZID=Asia/Tokyo:20230427T091500
+DTSTART;TZID=Asia/Tokyo:20230427T091500
+DTEND;TZID=Asia/Tokyo:20230427T104500
+X-ALT-DESC;FMTTYPE=text/html:Salon name: Grazia \n\nサロンの住所: 三重県天カ須賀四日市市4丁目5番8号 \n\nSalon phone: 09063531183 \n\nSalon email: ritorito0715@gmailc.com \n\n予約サービス:\nHaircut: 09:15 ➝ 09:45 - Pablo\nShampoo: 09:45 ➝ 10:45 - Pablo\n\n予約の注意事項:\nなし\n\nご予約状況: 完了
+LOCATION:三重県天カ須賀四日市市4丁目5番8号
+END:VEVENT
+END:VCALENDAR
