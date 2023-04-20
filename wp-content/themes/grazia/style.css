@@ -13,8 +13,7 @@ Version: バージョン
 
 li,
 a,
-p,
-span {
+p {
   color: #202124 !important;
 }
 
@@ -30,6 +29,10 @@ body {
   body {
     font-size: 14px;
   }
+}
+
+.sln-box--formactions {
+  display: block !important;
 }
 
 body {
@@ -680,7 +683,7 @@ view more のアニメーション
 }
 
 table {
-  outline: 2px solid #ddd;
+  /* outline: 2px solid #ddd; */
   border-collapse: collapse;
   width: 100%;
 }
@@ -691,7 +694,7 @@ th {
 
 th,
 td {
-  outline: 1px solid #ddd;
+  /* outline: 1px solid #ddd; */
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;

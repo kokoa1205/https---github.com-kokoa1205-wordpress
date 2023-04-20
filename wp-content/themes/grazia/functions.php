@@ -1,8 +1,4 @@
- <?php if (is_admin()) { ?>
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
- <script src="https://kit.fontawesome.com/60c46142bb.js" crossorigin="anonymous"></script>
- <?php   }
+<?php
 
 
 function twpp_enqueue_styles()
@@ -10,10 +6,14 @@ function twpp_enqueue_styles()
     wp_enqueue_style('main-style', get_stylesheet_uri());
     wp_enqueue_style('header-style', get_template_directory_uri().'/css/header.css');
     wp_enqueue_style('footer-style', get_template_directory_uri().'/css/footer.css');
-    wp_enqueue_script('custom_script', get_template_directory_uri() . '/script/index.js', );
+    // wp_enqueue_script('custom_script', get_template_directory_uri() . '/script/index.js', );
 }
 
 add_action('wp_enqueue_scripts', 'twpp_enqueue_styles');
+
+
+
+
 
 
 function enable_thumbnail()
@@ -44,28 +44,32 @@ function add_custom_post_type()
 add_action('init', 'add_custom_post_type');
 
 
-// カレンダー管理画面
-add_action('admin_menu', 'calendar_menu_page');
-function calendar_menu_page()
-{
-    add_menu_page('カレンダー管理', 'カレンダー管理', 'manage_options', 'calendar_menu_page', 'add_calendar_menu_page', 'dashicons-admin-generic', 6);
-}
-function add_calendar_menu_page()
-{
-    ?>
- <div class="wrap">
-   <h2>カレンダー管理</h2>
- </div>
- <?php
+// // カレンダー管理画面
+// add_action('admin_menu', 'calendar_menu_page');
+// function calendar_menu_page()
+// {
+//     add_menu_page('カレンダー管理', 'カレンダー管理', 'manage_options', 'calendar_menu_page', 'add_calendar_menu_page', 'dashicons-admin-generic', 6);
+// }
+// function add_calendar_menu_page()
+// {
+//     require 'calendar/reserve.php';
 
-// カレンダーサブ画面
-}add_action('admin_menu', 'add_custom_submenu_page');
-function add_custom_submenu_page()
-{
-    add_submenu_page('calendar_menu_page', '定休日追加画面', '定休日追加', 'manage_options', 'custom_submenu_page_1', 'add_holiday_menu_page', 1);
-}
+// }
+// // カレンダーサブ画面
+// add_action('admin_menu', 'add_custom_submenu_page');
+// function add_custom_submenu_page()
+// {
+//     add_submenu_page('calendar_menu_page', '定休日追加画面', '定休日追加', 'manage_options', 'calendar_menu', 'add_holiday_menu_page', 1);
+//     add_submenu_page('calendar_menu_page', '予約登録画面', '予約登録画面', 'manage_options', 'reserve_register', 'add_reserve_register_page', 1);
+// }
 
-function add_holiday_menu_page()
-{
-    require 'calendar/holiday.php';
-}
+// function add_holiday_menu_page()
+// {
+//     require 'calendar/holiday.php';
+// }
+
+
+// function add_reserve_register_page()
+// {
+//     require 'calendar/reserve_register.php';
+// }

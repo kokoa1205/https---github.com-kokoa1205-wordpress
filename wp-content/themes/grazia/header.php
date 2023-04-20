@@ -3,14 +3,16 @@
 
 <head>
   <?php wp_enqueue_script("jquery");  ?>
-
-  <?php wp_head(); ?>
-  <?php wp_deregister_script('jquery');?>
-  <?php if (is_single()): ?>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/single.css">
-  <?php endif; ?>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <?php wp_head(); ?>
+  <?php // wp_deregister_script('jquery');?>
+  <?php if (is_single()): ?>
+
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/single.css">
+  <?php endif; ?>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body>
@@ -26,11 +28,11 @@
           <nav class="navbar col-md-6 h-100">
             <ul>
               <li><a class="current" href=”#”>HOME</a></li>
-              <li><a href=”/nail>NAIL</a></li>
-              <li><a href=”/massage>MASSAGE</a></li>
-              <li><a href=”/news”>NEWS</a></li>
-              <li><a href=”/price>PRICE</a></li>
-              <li><a href=”/style>STYLE</a></li>
+              <li><a href="<?php echo home_url('/nail') ?>">NAIL</a></li>
+              <li><a href="<?php echo home_url('/message') ?>">MASSAGE</a></li>
+              <li><a href="<?php echo home_url('/news') ?>">NEWS</a></li>
+              <li><a href="<?php echo home_url('/price') ?>">PRICE</a></li>
+              <li><a href="<?php echo home_url('/style') ?>">STYLE</a></li>
             </ul>
           </nav>
           <div class="reserve col-md-3 h-100 h-100">
@@ -41,7 +43,7 @@
                   src="<?php echo get_theme_file_uri('img/line-icon3.png') ?>" alt="ラインアイコン"></a>
             </div>
             <div class="reserve-box">
-              <a href="" target="_blank" class="reserve-btn">
+              <a href="<?php echo home_url('/reserve') ?>" target="_blank" class="reserve-btn">
                 <span>RESEVE</span>
                 <svg id="_icon-blank.svg" xmlns="http://www.w3.org/2000/svg" width="16.75" height="8.406"
                   viewBox="0 0 16.75 8.406">
@@ -72,11 +74,11 @@
             <div>
               <ul class="nav_list">
                 <li class="nav_item"><a class="current" href=”#”>HOME</a></li>
-                <li class="nav_item"><a href=”/nail>NAIL</a></li>
-                <li class="nav_item"><a href=”/massage>MASSAGE</a></li>
+                <li class="nav_item"><a href="<?php echo home_url('/nail');?>">NAIL</a></li>
+                <li class="nav_item"><a href="/massage">MASSAGE</a></li>
                 <li class="nav_item"><a href=”/news”>NEWS</a></li>
-                <li class="nav_item"><a href=”/price>PRICE</a></li>
-                <li class="nav_item"><a href=”/style>STYLE</a></li>
+                <li class="nav_item"><a href="/price">PRICE</a></li>
+                <li class="nav_item"><a href="/style">STYLE</a></li>
               </ul>
             </div>
             <div class="nav-icon d-flex">
