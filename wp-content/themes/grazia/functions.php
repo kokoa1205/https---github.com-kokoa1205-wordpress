@@ -6,7 +6,7 @@ function twpp_enqueue_styles()
     wp_enqueue_style('main-style', get_stylesheet_uri());
     wp_enqueue_style('header-style', get_template_directory_uri().'/css/header.css');
     wp_enqueue_style('footer-style', get_template_directory_uri().'/css/footer.css');
-    // wp_enqueue_script('custom_script', get_template_directory_uri() . '/script/index.js', );
+    wp_enqueue_script('custom_script', get_template_directory_uri() . '/script/index.js', );
 }
 
 add_action('wp_enqueue_scripts', 'twpp_enqueue_styles');
