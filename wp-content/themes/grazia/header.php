@@ -29,7 +29,7 @@
             <ul>
               <li><a class="current" href=”#”>HOME</a></li>
               <li><a href="<?php echo home_url('/nail') ?>">NAIL</a></li>
-              <li><a href="<?php echo home_url('/dance') ?>">dance</a></li>
+              <li><a href="<?php echo home_url('/dance') ?>">DANCE</a></li>
               <li><a href="<?php echo home_url('/news') ?>">NEWS</a></li>
               <li><a href="<?php echo home_url('/price') ?>">PRICE</a></li>
               <li><a href="<?php echo home_url('/style') ?>">STYLE</a></li>
@@ -75,7 +75,7 @@
               <ul class="nav_list">
                 <li class="nav_item"><a class="current" href=”#”>HOME</a></li>
                 <li class="nav_item"><a href="<?php echo home_url('/nail');?>">NAIL</a></li>
-                <li class="nav_item"><a href="/dance">dance</a></li>
+                <li class="nav_item"><a href="/dance">DANCE</a></li>
                 <li class="nav_item"><a href=”/news”>NEWS</a></li>
                 <li class="nav_item"><a href="/price">PRICE</a></li>
                 <li class="nav_item"><a href="/style">STYLE</a></li>
