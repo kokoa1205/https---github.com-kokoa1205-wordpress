@@ -21,22 +21,6 @@ $args = array(
     'suppress_filters' => true
 );
 $style_posts = get_posts($args);
-
-
-$userdata = array(
-    'user_login'  =>  'kokoa',
-    'user_pass'   =>  'kokoa'  // ユーザーを登録するとき、`user_pass` が必要。
-);
-
-$user_id = wp_insert_user($userdata) ;
-
-// 成功した場合
-if (! is_wp_error($user_id)) {
-    echo "ユーザーを作成しました : ". $user_id;
-}
-
-
-
 ?>
 
 
@@ -57,9 +41,14 @@ if (! is_wp_error($user_id)) {
       <div class="col-7 h-100">
         <div class="nail-contents fadeUpTrigger">
           <div class="nail-content h-100">
-            <div class="nail-title">
-              <span>ネイル</span>
-              <h1><span>01</span>NAIL</h1>
+            <div class="nail-title-box row">
+              <div class="title-number col-auto">
+                01
+              </div>
+              <div class="nail-title">
+                <p>ネイル</p>
+                <h1><span>01</span>NAIL</h1>
+              </div>
             </div>
             <p class="nail-explain">
               当店のネイルは、トレンドを取り入れたデザインとプロの技術で、指先を美しく演出します。豪華なジェルネイルや自然なカラーコーディネートなど、お客様のご希望に合わせた多彩なデザインをご用意しています。
@@ -78,31 +67,36 @@ if (! is_wp_error($user_id)) {
     </div>
   </div>
 
-  <div class="massage-wrapper">
-    <div class="massage row fadeUpTrigger">
+  <div class="dance-wrapper">
+    <div class="dance row fadeUpTrigger">
       <div class="col-7">
-        <div class="massage-contents">
-          <div class="massage-content">
-            <div class="massage-title">
-              <span>整顔</span>
-              <h1>massage<span>02</span></h1>
+        <div class="dance-contents">
+          <div class="dance-content">
+            <div class="dance-title-box row">
+              <div class="title-number col-auto">
+                02
+              </div>
+              <div class="dance-title">
+                <p>ダンス</p>
+                <h1><span>02</span>DANCE</h1>
+              </div>
             </div>
-            <p class="massage-explain">
+            <p class="dance-explain">
               リラックスして心身を癒す至福の時間を提供するマッサージをご体験ください。厳選された高品質のオイルやローションを使用し、プロの技術で丁寧に施術いたします。
             </p>
-            <p class="massage-explain">
+            <p class="dance-explain">
               各種のマッサージメニューをご用意しており、ストレス解消や筋肉の緊張緩和、リフレッシュを目的としたオリジナルのコースもございます。また、お客様の体調やお悩みに合わせたカスタマイズも可能です。心地よい空間でのリラックスタイムをお楽しみいただけます。
             </p>
           </div>
-          <div class="massage-view">
-            <button data-hover="click me" class="view-more" onclick="location.href='massage'">
+          <div class="dance-view">
+            <button data-hover="click me" class="view-more" onclick="location.href='dance'">
               <div>View More</div>
             </button>
           </div>
         </div>
       </div>
       <div class="col-5 h-100">
-        <div class="massage-img">
+        <div class="dance-img">
           <img src="<?php echo get_theme_file_uri('img/LINE_ALBUM_221003_4.jpg');?>" alt="">
         </div>
       </div>
@@ -110,12 +104,14 @@ if (! is_wp_error($user_id)) {
   </div>
 
   <div class="price blurTrigger">
-    <div class="price-title">
-      <span>価格</span>
-      <h1 class="title">
-        <span>03</span>
-        PRICE
-      </h1>
+    <div class="price-title-box row">
+      <div class="title-number col-auto">
+        03
+      </div>
+      <div class="price-title">
+        <p>プライス</p>
+        <h1><span>03</span>PRICE</h1>
+      </div>
     </div>
     <div class="row list-contents">
       <div class="col-md-3 list-title fadeUpTrigger">
@@ -202,12 +198,14 @@ if (! is_wp_error($user_id)) {
 
   <div class="row">
     <div class="calendar col-6">
-      <div class="calendar-title">
-        <span>カレンダー</span>
-        <h1 class="title">
-          <span>04</span>
-          CALENDAR
-        </h1>
+      <div class="calendar-title-box row">
+        <div class="title-number col-auto">
+          04
+        </div>
+        <div class="calendar-title">
+          <p>カレンダー</p>
+          <h1><span>04</span>CALENDAR</h1>
+        </div>
       </div>
 
       <h1 id="header"></h1>
@@ -224,9 +222,12 @@ if (! is_wp_error($user_id)) {
 
     <!-- news -->
     <div class="news col-6">
-      <div class="news-title">
-        <div class="title">
-          <span>ニュース</span>
+      <div class="news-title-box row">
+        <div class="title-number col-auto">
+          05
+        </div>
+        <div class="news-title">
+          <p>ニュース</p>
           <h1><span>05</span>NEWS</h1>
         </div>
       </div>
@@ -252,12 +253,14 @@ if (! is_wp_error($user_id)) {
 
   <div class="background-style">
     <div class="style">
-      <div class="style-title">
-        <span>スタイル</span>
-        <h1 class="title">
-          <span>06</span>
-          STYLE
-        </h1>
+      <div class="style-title-box row">
+        <div class="title-number col-auto">
+          06
+        </div>
+        <div class="style-title">
+          <p>スタイル</p>
+          <h1><span>06</span>STYLE</h1>
+        </div>
       </div>
 
       <div class="section">
