@@ -404,61 +404,66 @@ view more のアニメーション
   top: 1.15em;
 }
 
-.nail-title {
-  text-align: left;
+.nail-title-box {
+  display: flex !important;
+  align-items: flex-end;
+  flex-direction: row;
+  flex-wrap: nowrap !important;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
 }
 
-.nail-title h1 {
+.nail-title-box>.title-number {
+  font-size: 25px;
+  padding-bottom: 5px;
+  border-top: 1px solid;
+  padding-top: 5px;
+}
+
+.nail-title>p {
+  margin-bottom: -15px;
+  margin-left: 30px;
+  font-size: 14px;
+}
+
+.nail-title>h1 {
+  margin-bottom: 0;
   font-family: Copperplate;
   margin-top: -15px;
-  border-bottom: 1px solid;
-  margin-bottom: 60px;
   letter-spacing: 0.10em;
 }
 
-.nail-title h1 span {
-  font-size: 20px;
-  margin-right: 10px;
-  border-top: 1px solid;
-  width: fit-content;
-  padding-left: 3px;
-  padding-top: 10px;
-}
-
-.nail-title span {
-  font-family: YuGothic;
-  font-size: 14px;
-  padding-left: 72px;
-  letter-spacing: 0.20em;
+.nail-title>h1>span {
+  display: none;
 }
 
 /*==================================================
 整顔
 ===================================*/
-.massage-wrapper {
+.dance-wrapper {
   padding-top: 50px;
   width: 100%;
 }
 
-.massage {
+.dance {
   margin: 0 auto !important;
   height: 600px;
   width: 80%;
 }
 
-.massage-img {
+.dance-img {
   text-align: center;
   width: 100%;
   height: 100%;
 }
 
-.massage-img img {
+.dance-img img {
   max-width: 100%;
   margin: 0 auto;
   height: 100%;
 }
 
-.massage-contents {
+.dance-contents {
   width: 80%;
   margin: 30% auto 0;
   text-align: left;
@@ -467,57 +472,66 @@ view more のアニメーション
   height: 70%;
 }
 
-.massage-explain {
+.dance-explain {
   width: 95%;
   margin: 0 auto;
   font-size: 14px;
   margin-bottom: 30px;
 }
 
-.massage span {
+.dance span {
   font-family: YuGothic;
   font-size: 14px;
 }
 
-.massage-view {
+.dance-view {
   margin: auto auto 10px 0;
 }
 
-.massage-view button {
+.dance-view button {
   font-size: .5em;
   margin-top: 10px;
 }
 
-.massage-view button::before {
+.dance-view button::before {
   top: 1.15em;
 }
 
-.massage-title {
+.dance-title-box {
+  display: flex !important;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap !important;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.dance-title-box>.title-number {
+  font-size: 25px;
+  padding-bottom: 5px;
+  border-top: 1px solid;
+  padding-top: 5px;
+}
+
+.dance-title {
   text-align: right;
 }
 
-.massage-title h1 {
+.dance-title>p {
+  margin-bottom: -15px;
+  font-size: 14px;
+  margin-right: 65px;
+}
+
+.dance-title>h1 {
+  margin-bottom: 0;
   font-family: Copperplate;
   margin-top: -15px;
-  border-bottom: 1px solid;
-  margin-bottom: 60px;
   letter-spacing: 0.10em;
 }
 
-.massage-title h1 span {
-  font-size: 20px;
-  margin-left: 10px;
-  border-top: 1px solid;
-  width: fit-content;
-  padding-left: 3px;
-  padding-top: 15px;
-}
-
-.massage-title>span {
-  font-family: YuGothic;
-  font-size: 14px;
-  padding-right: 113px;
-  letter-spacing: 0.50em;
+.dance-title>h1>span {
+  display: none;
 }
 
 
@@ -531,33 +545,46 @@ view more のアニメーション
   padding-bottom: 50px;
 }
 
-.price-title {
-  width: 80%;
-  margin: 0 auto;
+.price-title-box {
+  width: 80% !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: flex-end;
+  flex-direction: row;
+  flex-wrap: nowrap !important;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
 }
 
-.price-title h1 {
-  font-family: Copperplate;
-  margin-top: -10px;
-  border-bottom: 1px solid;
-  margin-bottom: 60px;
-  letter-spacing: 0.10em;
-}
-
-.price-title h1 span {
-  font-size: 20px;
-  margin-right: 10px;
+.price-title-box>.title-number {
+  font-size: 25px;
+  padding-bottom: 5px;
   border-top: 1px solid;
-  width: fit-content;
-  padding-left: 3px;
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
-.price-title span {
-  font-family: YuGothic;
+.price-title {
+  text-align: right;
+}
+
+.price-title>p {
+  margin-bottom: -15px;
   font-size: 14px;
-  padding-left: 110px;
-  letter-spacing: 0.20em;
+  text-align: center;
+  width: 90%;
+}
+
+.price-title>h1 {
+  margin-bottom: 0;
+  font-family: Copperplate;
+  margin-top: -15px;
+  letter-spacing: 0.10em;
+  text-align: center;
+  width: 90%;
+}
+
+.price-title>h1>span {
+  display: none;
 }
 
 .price-img {
@@ -633,39 +660,40 @@ view more のアニメーション
 /*==================================================
 カレンダー 
 ===================================*/
-.calendar-title {
-  width: 60%;
-  margin: 0 auto;
+.calendar-title-box {
+  width: 60% !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: flex-end;
+  flex-direction: row;
+  flex-wrap: nowrap !important;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
 }
 
-.calendar-title {
-  text-align: center;
-}
-
-.calendar-title h1 {
-  font-family: Copperplate;
-  margin-top: -15px;
-  border-bottom: 1px solid;
-  margin-bottom: 30px;
-  letter-spacing: 0.10em;
-  text-align: center;
-}
-
-.calendar-title h1 span {
+.calendar-title-box>.title-number {
   font-size: 20px;
-  margin-left: 10px;
+  padding-bottom: 5px;
   border-top: 1px solid;
-  width: fit-content;
-  padding-left: 3px;
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
-.calendar-title>span {
-  font-family: YuGothic;
+.calendar-title>p {
+  margin-bottom: -12px;
   font-size: 14px;
-  /* padding-right: 60px; */
-  padding-left: 60px;
-  letter-spacing: 0.50em;
+  margin-left: 55px;
+}
+
+.calendar-title>h1 {
+  margin-bottom: 0;
+  font-family: Copperplate;
+  margin-top: -10px;
+  letter-spacing: 0.10em;
+  font-size: 30px;
+}
+
+.calendar-title>h1>span {
+  display: none;
 }
 
 #header {
@@ -762,33 +790,40 @@ td.today {
   margin: 0 auto;
 }
 
-.news-title {
-  width: 65%;
-  margin: 0 auto;
+.news-title-box {
+  width: 60% !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: flex-end;
+  flex-direction: row;
+  flex-wrap: nowrap !important;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
 }
 
-.news-title h1 {
-  font-family: Copperplate;
-  margin-top: -15px;
-  border-bottom: 1px solid;
-  margin-bottom: 60px;
-  letter-spacing: 0.10em;
-}
-
-.news-title h1 span {
+.news-title-box>.title-number {
   font-size: 20px;
-  margin-right: 10px;
+  padding-bottom: 5px;
   border-top: 1px solid;
-  width: fit-content;
-  padding-left: 3px;
-  padding-top: 10px;
+  padding-top: 5px;
 }
 
-.news-title span {
-  font-family: YuGothic;
+.news-title>p {
+  margin-bottom: -12px;
   font-size: 14px;
-  padding-left: 80px;
-  letter-spacing: 0.20em;
+  margin-left: 23px;
+}
+
+.news-title>h1 {
+  margin-bottom: 0;
+  font-family: Copperplate;
+  margin-top: -10px;
+  letter-spacing: 0.10em;
+  font-size: 30px;
+}
+
+.news-title>h1>span {
+  display: none;
 }
 
 .news-background .section {
@@ -843,33 +878,46 @@ td.today {
   margin: 50px 20px 0;
 }
 
-.style-title {
-  width: 80%;
-  margin: 0 auto;
+.style-title-box {
+  width: 80% !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: flex-end;
+  flex-direction: row;
+  flex-wrap: nowrap !important;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
 }
 
-.style-title h1 {
-  font-family: Copperplate;
-  margin-top: -10px;
-  border-bottom: 1px solid;
-  margin-bottom: 60px;
-  letter-spacing: 0.10em;
-}
-
-.style-title h1 span {
-  font-size: 20px;
-  margin-right: 10px;
+.style-title-box>.title-number {
+  font-size: 25px;
+  padding-bottom: 5px;
   border-top: 1px solid;
-  width: fit-content;
-  padding-left: 3px;
-  padding-top: 15px;
+  padding-top: 5px;
 }
 
-.style-title span {
-  font-family: YuGothic;
+.style-title {
+  text-align: right;
+}
+
+.style-title>p {
+  margin-bottom: -15px;
   font-size: 14px;
-  padding-left: 100px;
-  letter-spacing: 0.20em;
+  text-align: center;
+  width: 90%;
+}
+
+.style-title>h1 {
+  margin-bottom: 0;
+  font-family: Copperplate;
+  margin-top: -15px;
+  letter-spacing: 0.10em;
+  text-align: center;
+  width: 90%;
+}
+
+.style-title>h1>span {
+  display: none;
 }
 
 .style .section {
@@ -1360,24 +1408,29 @@ td.today {
     width: 80%;
   }
 
-  .nail-contents .nail-content .nail-title {
+  .nail-title-box {
+    border: none;
+  }
+
+  .nail-title-box .title-number {
+    display: none;
+    border: none;
+  }
+
+  .nail-title>p {
+    text-align: center;
+    margin-left: 15px;
+  }
+
+  .nail-title>h1 {
+    font-size: 35px;
+    margin-bottom: 0;
     text-align: center;
   }
 
-  .nail-contents .nail-content .nail-title>span {
-    padding-left: 2.5rem;
-    padding-bottom: 5px;
-  }
-
-  .nail-contents .nail-content .nail-title h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    border-bottom: none;
-    margin-top: -10px;
-  }
-
-  .nail-title h1 span {
-    border-top: none;
+  .nail-title>h1>span {
+    font-size: 20px;
+    display: inline;
   }
 
   .nail-content .nail-explain {
@@ -1427,49 +1480,61 @@ td.today {
   /*==================================================
   マッサージ （レスポンシブデザイン）
   ===================================*/
-  .massage-wrapper {
+  .dance-wrapper {
     padding-top: 20px;
     margin-bottom: 80px;
   }
 
-  .massage {
+  .dance {
     display: block !important;
     height: auto;
   }
 
-  .massage div {
+  .dance div {
     width: 100%;
   }
 
-  .massage-contents {
+  .dance-contents {
     margin: 0 auto 50px;
   }
 
-  .massage-content .massage-title>span {
-    padding-right: 6.5rem;
+  .dance-title-box {
+    border: none;
   }
 
-  .massage-content .massage-title h1 {
+  .dance-title-box .title-number {
+    display: none;
+    border: none;
+  }
+
+  .dance-title>p {
     text-align: center;
-    border: none;
-    margin-bottom: 30px;
-    margin-top: -10px;
+    margin-left: 13px;
+    margin-right: 0;
+    margin-bottom: 5px;
   }
 
-  .massage-content .massage-title h1 span {
-    border: none;
+  .dance-title>h1 {
+    font-size: 30px;
+    margin-bottom: 0;
+    text-align: center;
   }
 
-  .massage-content .massage-explain {
+  .dance-title>h1>span {
+    font-size: 20px;
+    display: inline;
+  }
+
+  .dance-content .dance-explain {
     font-size: 12px;
   }
 
-  .massage-view {
+  .dance-view {
     text-align: center;
     margin-top: 10px;
   }
 
-  .massage-img {
+  .dance-img {
     display: inline-block;
     overflow: hidden;
     /* はみ出る部分を隠す */
@@ -1477,7 +1542,7 @@ td.today {
     /* いびつな形 */
   }
 
-  .massage-img img {
+  .dance-img img {
     display: block;
     max-width: 100%;
     width: 100%;
@@ -1494,22 +1559,32 @@ td.today {
     padding: 0;
   }
 
-  .price .price-title {
+  .price-title-box {
+    border: none;
+  }
+
+  .price-title-box .title-number {
+    display: none;
+    border: none;
+  }
+
+  .price-title>p {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .price-title>h1 {
+    font-size: 30px;
+    margin-bottom: 0;
     text-align: center;
   }
 
-  .price-title>span {
-    padding-left: 0.5rem
-  }
-
-  .price-title .title {
-    border: none;
-    margin-top: -5px;
-    margin-bottom: 10px;
-  }
-
-  .price-title .title span {
-    border: none;
+  .price-title>h1>span {
+    font-size: 20px;
+    display: inline;
+    font-family: YuGothic;
   }
 
   .price .list-contents {
@@ -1537,26 +1612,32 @@ td.today {
     margin: 0 auto 80px;
   }
 
-  .calendar-title {
-    width: 80%;
-  }
-
-  .calendar-title>span {
-    padding-left: 1.6rem;
-  }
-
-  .calendar-title .title {
+  .calendar-title-box {
     border: none;
+    width: 100% !important;
+  }
+
+  .calendar-title-box .title-number {
+    display: none;
+    border: none;
+  }
+
+  .calendar-title>p {
+    text-align: center;
+    margin-left: 13px;
+    margin-right: 0;
+  }
+
+  .calendar-title>h1 {
+    font-size: 30px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .calendar-title>h1>span {
     font-size: 20px;
-    padding-top: 10px;
-    display: flex;
-    margin-bottom: 20px;
-  }
-
-  .calendar-title .title span {
-    border: none;
-    padding-top: 0;
-    padding-right: 20px;
+    display: inline;
+    font-family: YuGothic;
   }
 
   .calendar #header {
@@ -1583,22 +1664,31 @@ td.today {
     margin-bottom: 80px;
   }
 
-  .news-title .title {
+  .news-title-box {
+    border: none;
+  }
+
+  .news-title-box .title-number {
+    display: none;
+    border: none;
+  }
+
+  .news-title>p {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 0;
+  }
+
+  .news-title>h1 {
+    font-size: 30px;
+    margin-bottom: 0;
     text-align: center;
   }
 
-  .news-title .title>span {
-    padding-left: 2.5rem;
-  }
-
-  .news-title .title h1 {
-    margin-top: -5px;
-    border: none;
-    margin-bottom: 20px;
-  }
-
-  .news-title .title h1 span {
-    border: none;
+  .news-title>h1>span {
+    font-size: 20px;
+    display: inline;
+    font-family: YuGothic;
   }
 
   .news-contents {
@@ -1618,18 +1708,32 @@ td.today {
     margin-bottom: 80px;
   }
 
-  .style .style-title>span {
-    padding-left: 7.5rem;
+  .style-title-box {
+    border: none;
   }
 
-  .style .style-title h1 {
+  .style-title-box .title-number {
+    display: none;
     border: none;
+  }
+
+  .style-title>p {
     text-align: center;
-    margin-bottom: 20px
+    margin-left: 10px;
+    margin-right: 0;
+    margin-bottom: 5px;
   }
 
-  .style .style-title h1 span {
-    border: none;
+  .style-title>h1 {
+    font-size: 30px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .style-title>h1>span {
+    font-size: 20px;
+    display: inline;
+    font-family: YuGothic;
   }
 
   .style .section {
