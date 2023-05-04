@@ -29,16 +29,17 @@
       <div class="contents">
         <p>ご予約は予約フォームかお電話にて承っております。</p>
         <a href="#" class="footer-reserve bordercircle"><span>090-5601-8429</span></a>
-        <a href="#" class="footer-reserve bordercircle"><span>RESERVE</span></a>
+        <a href="<?php echo home_url('/reserve');?>" class="footer-reserve bordercircle"><span>RESERVE</span></a>
       </div>
     </div>
   </div>
   <div class="row footer-bottom mt-5">
     <div class="col-5 footer-sns">
       <div class="d-flex justify-content-center">
-        <a href="" target="_blank" class="insta-icon"><img src="<?php echo get_theme_file_uri('img/insta-icon.png'); ?>" alt="インスタアイコン"></a>
-        <a target="_blank" href="" style="margin-right: 10px;"><img src="<?php echo get_theme_file_uri('img/line-icon3.png');?>"
-            alt="ラインアイコン"></a>
+        <a href="" target="_blank" class="insta-icon"><img src="<?php echo get_theme_file_uri('img/insta-icon.png'); ?>"
+            alt="インスタアイコン"></a>
+        <a target="_blank" href="" style="margin-right: 10px;"><img
+            src="<?php echo get_theme_file_uri('img/line-icon3.png');?>" alt="ラインアイコン"></a>
       </div>
       <div class="title-img">
         <img src="<?php echo get_theme_file_uri('img/grazia_footer_logo.png');?>" alt="">
@@ -60,9 +61,11 @@
   </div>
 
 </footer>
-  <?php wp_footer(); ?>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/4-14/js/4-14.js"></script>
- </body>
+<?php wp_footer(); ?>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/4-14/js/4-14.js"></script>
+</body>
+
 </html>
