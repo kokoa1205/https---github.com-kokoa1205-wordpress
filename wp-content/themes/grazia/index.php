@@ -1,5 +1,7 @@
 <?php
 
+
+
 // news用の投稿を取得
 $args = array(
     'posts_per_page'   => 4,
